@@ -51,6 +51,6 @@ function criaVeiculo(): Veiculo{
 }
 
 function frear(veiculo: Veiculo): void{
-    veiculo.velocidade -= veiculo.potencia*0.1;
+    veiculo.velocidade -= veiculo.potencia*0.25;
     console.log(veiculo.velocidade);
 }
