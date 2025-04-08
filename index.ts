@@ -31,6 +31,9 @@ while(true){              // Loop infinito para o menu de opções
         case 3:
             subirMarcha(carro);
             break;
+        case 4:
+            descerMarcha(carro);
+            break;
         default:
             break;
     }
@@ -68,5 +71,13 @@ function subirMarcha(veiculo: Veiculo): void {
         console.log(`Marcha atual: ${veiculo.marchaAtual}`);
     } else {
         console.log("Já está na marcha máxima.");
+    }
+}
+function descerMarcha(veiculo: Veiculo): void {
+    if (veiculo.marchaAtual > 0) {
+        veiculo.marchaAtual--;
+        console.log(`Marcha atual: ${veiculo.marchaAtual}`);
+    } else {
+        console.log("Já está em ponto morto.");
     }
 }
