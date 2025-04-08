@@ -28,7 +28,8 @@ while(true){              // Loop infinito para o menu de opções
         case 2:
             frear(carro);
             break;
-    
+        case 5:
+            imprimirDados(carro)
         default:
             break;
     }
@@ -58,4 +59,15 @@ function criaVeiculo(): Veiculo{
 function frear(veiculo: Veiculo): void{
     veiculo.velocidade -= veiculo.potencia*0.25;      // Reduz a velocidade
     console.log(veiculo.velocidade);   // Mostra a nova velocidade no console
+}
+
+function imprimirDados(veiculo: Veiculo): void {
+    console.log("===== DADOS DO VEÍCULO =====");
+    console.log(`Marca: ${veiculo.marca}`);
+    console.log(`Modelo: ${veiculo.modelo}`);
+    console.log(`Potência: ${veiculo.potencia}`);
+    console.log(`Número de marchas: ${veiculo.numeroMarchas}`);
+    console.log(`Marcha atual: ${veiculo.marchaAtual}`);
+    console.log(`Velocidade atual: ${veiculo.velocidade.toFixed(2)} km/h`);
+    console.log("=============================");
 }
