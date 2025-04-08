@@ -28,7 +28,9 @@ while(true){              // Loop infinito para o menu de opções
         case 2:
             frear(carro);
             break;
-    
+        case 4:
+            descerMarcha(carro);
+            break;
         default:
             break;
     }
@@ -58,4 +60,13 @@ function criaVeiculo(): Veiculo{
 function frear(veiculo: Veiculo): void{
     veiculo.velocidade -= veiculo.potencia*0.25;      // Reduz a velocidade
     console.log(veiculo.velocidade);   // Mostra a nova velocidade no console
+}
+
+function descerMarcha(veiculo: Veiculo): void {
+    if (veiculo.marchaAtual > 0) {
+        veiculo.marchaAtual--;
+        console.log(`Marcha atual: ${veiculo.marchaAtual}`);
+    } else {
+        console.log("Já está em ponto morto.");
+    }
 }
