@@ -14,6 +14,7 @@ while(true){              // Loop infinito para o menu de opções
     console.log("| 3 - Subir marcha              |");
     console.log("| 4 - Descer marcha             |");
     console.log("| 5 - Imprimir dados do veículo |");
+    console.log("| 6 - Ativar NITRO              |");
     console.log("| 0 - Sair                      |");
     console.log("|------------- Menu ------------|");
 
@@ -33,6 +34,9 @@ while(true){              // Loop infinito para o menu de opções
             break;
         case 4:
             descerMarcha(carro);
+            break;
+        case 6:
+            ativarNitro(carro); // Chama a função para ativar o nitro
             break;
         default:
             break;
@@ -80,4 +84,10 @@ function descerMarcha(veiculo: Veiculo): void {
     } else {
         console.log("Já está em ponto morto.");
     }
+}
+function ativarNitro(veiculo: Veiculo): void {
+    const ganhoVelocidade = Math.floor(Math.random() * (80 - 40 + 1)) + 40;
+    veiculo.velocidade += ganhoVelocidade;
+    console.log(`Você ativou o NITRO e ganhou ${ganhoVelocidade} km/h de velocidade!`);
+    console.log(`Velocidade atual: ${veiculo.velocidade} km/h`);
 }
