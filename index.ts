@@ -35,6 +35,9 @@ while(true){              // Loop infinito para o menu de opções
         case 4:
             descerMarcha(carro);
             break;
+        case 5:
+            imprimirDados(carro);
+            break;
         case 6:
             ativarNitro(carro); // Chama a função para ativar o nitro
             break;
@@ -90,4 +93,15 @@ function ativarNitro(veiculo: Veiculo): void {
     veiculo.velocidade += ganhoVelocidade;
     console.log(`Você ativou o NITRO e ganhou ${ganhoVelocidade} km/h de velocidade!`);
     console.log(`Velocidade atual: ${veiculo.velocidade} km/h`);
+}
+
+function imprimirDados(veiculo: Veiculo): void {
+    console.log("===== DADOS DO VEÍCULO =====");
+    console.log(`Marca: ${veiculo.marca}`);
+    console.log(`Modelo: ${veiculo.modelo}`);
+    console.log(`Potência: ${veiculo.potencia}`);
+    console.log(`Número de marchas: ${veiculo.numeroMarchas}`);
+    console.log(`Marcha atual: ${veiculo.marchaAtual}`);
+    console.log(`Velocidade atual: ${veiculo.velocidade.toFixed(2)} km/h`);
+    console.log("=============================");
 }
