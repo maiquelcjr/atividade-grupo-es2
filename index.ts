@@ -28,7 +28,9 @@ while(true){              // Loop infinito para o menu de opções
         case 2:
             frear(carro);
             break;
-    
+        case 7:
+            resetarVeiculo(carro);
+            break;
         default:
             break;
     }
@@ -47,7 +49,7 @@ function acelerar(veiculo: Veiculo): void{
 }}
 
 function criaVeiculo(): Veiculo{
-    const veiculo: Veiculo = new Veiculo();
+    const veiculo: Veiculo = new Veiculo
     veiculo.marca = teclado('Marca: ');      // Solicita ao usuário os dados do veículo e armazena nas propriedades
     veiculo.modelo = teclado('Modelo: ');
     veiculo.potencia = +teclado('Potência: ');
@@ -58,4 +60,10 @@ function criaVeiculo(): Veiculo{
 function frear(veiculo: Veiculo): void{
     veiculo.velocidade -= veiculo.potencia*0.25;      // Reduz a velocidade
     console.log(veiculo.velocidade);   // Mostra a nova velocidade no console
+}
+
+function resetarVeiculo(veiculo: Veiculo): void {
+    veiculo.velocidade = 0;
+    veiculo.marchaAtual = 0;
+    console.log("Velocidade zerada e marcha em ponto morto.");
 }
