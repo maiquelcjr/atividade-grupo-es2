@@ -41,6 +41,9 @@ while(true){              // Loop infinito para o menu de opções
         case 6:
             ativarNitro(carro); // Chama a função para ativar o nitro
             break;
+        case 7:
+            resetarVeiculo(carro);
+            break;
         default:
             break;
     }
@@ -59,7 +62,7 @@ function acelerar(veiculo: Veiculo): void{
 }}
 
 function criaVeiculo(): Veiculo{
-    const veiculo: Veiculo = new Veiculo();
+    const veiculo: Veiculo = new Veiculo
     veiculo.marca = teclado('Marca: ');      // Solicita ao usuário os dados do veículo e armazena nas propriedades
     veiculo.modelo = teclado('Modelo: ');
     veiculo.potencia = +teclado('Potência: ');
@@ -104,4 +107,9 @@ function imprimirDados(veiculo: Veiculo): void {
     console.log(`Marcha atual: ${veiculo.marchaAtual}`);
     console.log(`Velocidade atual: ${veiculo.velocidade.toFixed(2)} km/h`);
     console.log("=============================");
+}
+function resetarVeiculo(veiculo: Veiculo): void {
+    veiculo.velocidade = 0;
+    veiculo.marchaAtual = 0;
+    console.log("Velocidade zerada e marcha em ponto morto.");
 }
